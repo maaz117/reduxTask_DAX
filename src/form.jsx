@@ -1,27 +1,6 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from 'yup';
-
-const validationSchema = Yup.object({
-    name: Yup.string()
-        .required("Name is required")
-        .min(3, "Name must be at least 3 characters"),
-
-    email: Yup.string()
-        .email("Invalid email format")
-        .required("Email is required"),
-
-    age: Yup.number()
-        .required("Age is required")
-        .min(18, "Age must be at least 18"),
-
-    gender: Yup.string()
-        .required("Gender is required"),
-
-    profilePicture: Yup.mixed()
-        .required("Profile picture is required"),
-    
-});
+import { validationSchema } from "../Validations/simpleValidations";
 
 const MyForm = () => {
     return(
